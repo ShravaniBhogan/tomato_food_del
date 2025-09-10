@@ -21,7 +21,8 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://tomato-food-del-t8j1.vercel.app",
-      "https://tomato-food-del-cz82.vercel.app"
+      "https://tomato-food-del-cz82.vercel.app",
+      "https://tomato-food-del-szmg.vercel.app" // <-- Add this line
     ],
     credentials: true,
   })
