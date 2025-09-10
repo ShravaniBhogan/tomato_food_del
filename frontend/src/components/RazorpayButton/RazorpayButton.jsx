@@ -28,7 +28,7 @@ const RazorpayButton = ({
     try {
       // Step 2: create Razorpay order to get order details for payment
       const { data } = await axios.post(
-        'http://localhost:4000/api/order/payment/order',
+        'https://tomato-food-del-3r2x-be73lcxhb-shravani-bhogans-projects.vercel.app/api/order/payment/order',
         { amount }
       );
 
@@ -42,7 +42,7 @@ const RazorpayButton = ({
         handler: async function (response) {
           alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
           // Optionally call your verify order API here to mark payment success:
-          await axios.post('http://localhost:4000/api/order/verifyorder', {
+          await axios.post('https://tomato-food-del-3r2x-be73lcxhb-shravani-bhogans-projects.vercel.app/api/order/verifyorder', {
             orderId,
             success: "true"
           });

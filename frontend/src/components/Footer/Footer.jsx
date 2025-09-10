@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="footer-content-center">
             <h2>COMPANY</h2>
             <ul>
-                <li><Link to="http://localhost:5174/">Home</Link></li>
+                <li><Link to="https://tomato-food-del-t8j1.vercel.app/">Home</Link></li>
                 <li>About us</li>
                 <li>Delivery</li>
                 <li>Privacy policy</li>
