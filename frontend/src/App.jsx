@@ -8,6 +8,7 @@ import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Cart from "./pages/Cart/Cart";
 import Verify from './pages/Verify/Verify'
 import MyOrders from './pages/MyOrders/MyOrders'
+import NotFound from './components/NotFound/NotFound'
 
 // Import the context provider
 import StoreContextProvider from "./Context/StoreContext";
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/order" element={<PlaceOrder />} />
           <Route path="/verify" element={<Verify/>}/>
           <Route path='/myorders' element={<MyOrders />}/>
+          <Route path='*' element={<NotFound />}/>
         </Routes>
       </div>
       <Footer />
