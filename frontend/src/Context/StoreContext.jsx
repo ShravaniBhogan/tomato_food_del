@@ -5,13 +5,15 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
-  const url = "https://tomato-food-del-3r2x.vercel.app";
+  const url = "http://localhost:4000";
+    // const url = "https://tomato-food-del-3r2x.vercel.app";
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
 
   // Fetch all food items (no change needed)
   const fetchFoodList = async () => {
     const response = await axios.get(url + "/api/food/list");
+    console.log(response.data.data)
     setFoodList(response.data.data);
   };
 

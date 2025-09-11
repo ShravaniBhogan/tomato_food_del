@@ -7,6 +7,10 @@ import userRouter from "./routes/userRoute.js";
 import dotenv from "dotenv";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
+import connectCloudinary from "./config/clodinary.js";
+
+// cloudinary config
+connectCloudinary();
 dotenv.config();
 
 // app config
@@ -19,6 +23,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
+      "http://localhost:5174",
       "https://tomato-food-del-t8j1.vercel.app",
       "https://tomato-food-del-cz82.vercel.app",
       "https://tomato-food-del-szmg.vercel.app",

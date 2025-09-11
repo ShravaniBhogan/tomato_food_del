@@ -1,17 +1,24 @@
 import foodModel from "../models/foodModel.js";
 import fs from "fs";
-
+import { v2 as cloudinary } from "cloudinary";
+import dotenv from "dotenv";
+dotenv.config();
 // Add food item
 const addFood = async (req, res) => {
   try {
     const image_filename = req.file ? req.file.filename : "";
-
+const image_path = req.file ? req.file.path : "";
+const new_image_url = await cloudinary.uploader.upload(image_path, {
+  resource_type: "image",
+  folder: "foodApp",
+});
+    console.log("Cloudinary upload result:", new_image_url);
     const food = new foodModel({
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
       category: req.body.category,
-      image: image_filename,
+      image: new_image_url.secure_url,
     });
 
     await food.save();
